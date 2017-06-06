@@ -1,38 +1,39 @@
 ---
-layout: default
+title: Herring Cove
 ---
-<div id="main">
-  <section>
-    {% for post in site.posts limit:1 %}
-      <header>
-        <h1>{{ post.title }}</h1>
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-      </header>
-      <section>
-        {{ post.content }}
-        <p class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></p>
-      </section>
-    {% endfor %}
-  </section>
+{% include showcase.html %}
+{% include greeting.html %}
 
-  <section>
-    <div class="row">
-      {% for post in site.posts offset:1 %}
-        <article class="{% cycle '6u', '6u$' %} 12u(small)">
-          <header>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          </header>
-          <section>
-            {{ post.excerpt }}
-          </section>
-          <footer>
-            <ul class="actions">
-              <li><a href="{{ post.url }}" class="button">Read More</a></li>
-              <li class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></li>
-            </ul>
-          </footer>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
+{% if site.posts != empty %}
+<div class="recent-posts">
+  <h1>Recent Posts</h1>
+  {% for post in site.posts limit: 3 %}
+    {% if forloop.first %}
+      {% assign add_class = 'most-recent' %}
+      {% capture fresh_tag %}
+        &nbsp;<span class="badge"><smaller>FRESH</smaller></span>
+      {% endcapture %}
+    {% endif %}
+    <ul class="homepage-posts {{ add_class }}">
+      <li>
+        <span>
+          <h4>
+            <a href="{{ site.baseurl }}/{{ post.url }}">
+              {{ post.title }}
+            </a>
+            {{ fresh_tag }}
+            <time class="pull-right">
+              {{ post.date | date_to_string | date: "%b %-d, %Y"  }}
+            </time>
+          </h4>
+        </span>
+      </li>
+    </ul>
+    {% assign add_class = '' %}
+    {% assign fresh_tag = '' %}
+  {% endfor %}
+  <ul>
+    <a href="{{ site.baseurl }}/list.html">View More...</a>
+  </ul>
 </div>
+{% endif %}
