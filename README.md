@@ -1,44 +1,37 @@
-This repository is no longer maintained. 
-============
+dbyll
+=====
 
-Herring Cove
-============
+Open source stylish, minimalistic theme for jekyll.  
+Demo: http://dbtek.github.io/dbyll/
 
-Herring Cove is a clean and responsive theme for Jekyll. 
+## New
+- Dbyll for Ghost is now available. Get it [here](https://github.com/dbtek/dbyll-ghost) now.
+- :new: Check out [Paper](https://github.com/dbtek/paper), new Material Design Jekyll theme.
 
+### Features
+- Responsive layout.
+- Supports tags and categories.
+- Social profile and bio of author.
+- Bootstrap based.
+- Glyphicon and Font-Awesome Icons.
+- Pagination.
+- Syntax highlighting with pygments.
+- Disqus comments.
+- :new: Custom sidebar background image.
 
-### Overview 
-
-* Fixed Sidebar with social links
-* Minimal design 
-* Comments by Disqus
-* Social Sharing abilities 
-* Easy to configure
-* Based on Bootstrap
-
-### Screenshots
-
-![screenshot](/images/screenshot1.png)
-![screenshot](/images/screenshot2.png)
-
-### Setup
-
-1. Install Jekyll
-2. Fork or [download](https://github.com/arnp/herring-cove/archive/master.zip) this theme repo
-3. Edit the `_config.yml` file
-
-You can change the showcase image by replacing `showcase.jpg` file in the `images` folder. I'll try to find a better way to do this soon. 
 
 ### Download
+* [Download dbyll](https://github.com/dbtek/dbyll/archive/master.zip)
 
-[download](https://github.com/arnp/herring-cove/archive/master.zip)
+### Install
+- You need to have [ruby](https://www.ruby-lang.org/en/documentation/installation/) installed in your system.
+- Install bundler which helps in specifying and installing dependencies of any Ruby project. ```gem install bundler```
+- Go to the root of the repo and run this - ```bundle install```
+- Then - ```bundle exec jekyll serve```
+
+### Screenshots
+![dbyll-screenshot](assets/media/dbyll-ss.png)
 
 ### License
-* [MIT](http://opensource.org/licenses/MIT)
+- [MIT](http://opensource.org/licenses/MIT)
 
--------------
-Herring Cove is always a work in progress and as such, I hope to clean up the code and add features as time permits. Feel free to add your own additions. 
-
-*What's with the name?*
-
-[Herring Cove](http://www.capecodbeachchair.com/beachguide/index.cfm?page=3&BeachID=5) is a beach on Cape Cod in Provincetown, Massachusetts. If you're in the area, be sure to check it out!
